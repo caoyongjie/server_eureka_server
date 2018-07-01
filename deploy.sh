@@ -11,7 +11,7 @@
 #      kill -9 $pid
 #   fi
 #}
-cd $PROJ_PATH/eureka-server
+cd $PROJ_PATH/
 mvn clean install
 nohup java -jar eureka-server.jar
 #killTomcat
