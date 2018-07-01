@@ -1,16 +1,17 @@
 #!/usr/bin/env bash
-killTomcat()
-    {
-        pid=`ps -ef | grep tomcat|grep java|awk '{print $2}'`
-        echo "tomcat Id LIST :$pid"
-        if [ "$pid" = "" ]
-        then
-            echo "----Tomcat-test 已经关闭----"
-        else
-            kill -9 $pid
-        fi
-    }
 
+#关闭tomcat
+killTomcat()
+{
+   pid=`ps -ef|grep tomcat|grep java|awk '{print $2}'`
+   echo "tomcat Id LIST :$pid"
+   if [ "$pid" = "" ]
+   then
+     echo "----Tomcat-test 已经关闭----"
+   else
+      kill -9 $pid
+   fi
+}
 cd $PROJ_PATH/server_eureka_server
 mvn clean install
 #nohup java -jar server_eureka_server.jar
