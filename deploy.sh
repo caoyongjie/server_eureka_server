@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 #关闭tomcat
 #killTomcat()
 #{
